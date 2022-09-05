@@ -1,41 +1,39 @@
 import axios from "axios";
 import { useEffect, useState } from "react"
 
-interface type {
+interface Cliente {
     id:number,
-    nome:string,
+    name:string,
     sobrenome:string
 }
 
 export function Consulta () {
-    const [apiData,setapiData] = useState([]);
+    const [apiData,setapiData] = useState<Cliente[]>([]);
 
     useEffect(() => {
         axios.get('/api/clientes')
         .then((getData) => {
-            console.log(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
+            setapiData(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
         })
-    })
+    },[])
 
     return (
         <div>
             <table>
-                <tr>
-                    <th>id</th>
-                    <th>Nome</th>
-                    <th>Sobrenome</th>
-                </tr>
-                    <tbody>
-                        {apiData.map((data:type) => {
-                            return (
-                                <tr>
-                                    <th>{data.id}</th>
-                                    <th>{data.nome}</th>
-                                    <th>{data.sobrenome}</th>
-                                </tr>
-                            )
-                        })}
-                    </tbody>
+                <tbody>
+                    <tr>
+                        <th>id</th>
+                        <th>Nome</th>
+                        <th>Sobrenome</th>
+                    </tr>
+                    {apiData.map(i => (
+                        <tr key={i.id}> {/* key props para cada elemento*/}
+                            <th>{i.id}</th>
+                            <th>{i.name}</th>
+                            <th>{i.sobrenome}</th>
+                        </tr>
+                    ))} 
+                </tbody>
             </table>
         </div>
     )
