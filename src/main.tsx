@@ -4,7 +4,6 @@ import App from './App'
 import {BrowserRouter} from 'react-router-dom'
 import { createServer } from "miragejs"
 
-export default function () {
   createServer({
     routes() {
       this.get("/api/clientes", () => ({
@@ -16,7 +15,6 @@ export default function () {
       }))
     },
   })
-}
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

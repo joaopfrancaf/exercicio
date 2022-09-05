@@ -13,7 +13,7 @@ export function Consulta () {
     useEffect(() => {
         axios.get('/api/clientes')
         .then((getData) => {
-            setapiData(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
+            console.log(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
         })
     })
 
