@@ -21,18 +21,21 @@ export function Consulta () {
         <div>
             <table>
                 <tr>
+                    <th>id</th>
                     <th>Nome</th>
                     <th>Sobrenome</th>
                 </tr>
-                    {apiData.map((data:type) => {
-                        return (
-                            <tr>
-                                <th>{data.id}</th>
-                                <th>{data.nome}</th>
-                                <th>{data.sobrenome}</th>
-                            </tr>
-                        )
-                    })}
+                    <tbody>
+                        {apiData.map((data:type) => {
+                            return (
+                                <tr>
+                                    <th>{data.id}</th>
+                                    <th>{data.nome}</th>
+                                    <th>{data.sobrenome}</th>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
             </table>
         </div>
     )

@@ -5,7 +5,9 @@ export function Navbar () {
         <nav>
             <ul>
                 <li><Link to='/'>Inicio</Link></li>
-                <li><Link to='Incluir'>Incluir</Link></li>
+                <li><Link to='incluir'>Incluir</Link></li>
+                <li><Link to='Consulta'>Consulta</Link></li>
+
             </ul>
         </nav>
     )

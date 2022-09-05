@@ -19,16 +19,14 @@ export function Incluir () {
                     Nome:
                     <input type="text" name="name" onChange={(e) => setNome(e.target.value)} />
                 </label>
-                <input type="submit" value="Enviar" />
             </div>
             <div>
                 <label>
                     Sobrenome:
-                    <input type="text" name="name" />
+                    <input type="text" name="name" onChange={(e) => setSobrenome(e.target.value)} />
                 </label>
-                <input type="submit" value="Enviar" onChange={(e) => setSobrenome(e.target.value)} />
             </div>
-            <button type="submit" onClick={sendToApi}></button>
+            <button type="submit" onClick={sendToApi}>Salvar</button>
         </form>
     )
 }
