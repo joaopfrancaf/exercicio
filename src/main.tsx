@@ -4,7 +4,7 @@ import App from './App'
 import {BrowserRouter} from 'react-router-dom'
 import { createServer } from "miragejs"
 
-createServer({ //aqui antes tava errado ()
+/*createServer({ //aqui antes tava errado ()
   routes() {
     this.get("/api/clientes", () => {
       return [ 
@@ -14,7 +14,7 @@ createServer({ //aqui antes tava errado ()
       ]
     })
   },
-})
+})*/
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
