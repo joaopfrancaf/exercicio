@@ -4,16 +4,16 @@ import { useEffect, useState } from "react"
 interface Cliente {
     id:number,
     name:string,
-    sobrenome:string
+    type:string
 }
 
 export function Consulta () {
     const [apiData,setapiData] = useState<Cliente[]>([]);
 
     useEffect(() => {
-        axios.get('/api/clientes')
+        axios.get('https://jsonplaceholder.typicode.com/todos/1')
         .then((getData) => {
-            setapiData(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
+            console.log(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
         })
     },[])
 
@@ -30,7 +30,7 @@ export function Consulta () {
                         <tr key={i.id}> {/* key props para cada elemento*/}
                             <th>{i.id}</th>
                             <th>{i.name}</th>
-                            <th>{i.sobrenome}</th>
+                            <th>{i.type}</th>
                         </tr>
                     ))} 
                 </tbody>
