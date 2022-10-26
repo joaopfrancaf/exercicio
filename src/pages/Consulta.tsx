@@ -11,9 +11,9 @@ export function Consulta () {
     const [apiData,setapiData] = useState<Cliente[]>([]);
 
     useEffect(() => {
-        axios.get('http://dragonsguto.herokuapp.com/dragons/find')
+        axios.get('/api/clientes')
         .then((getData) => {
-            console.log(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
+            setapiData(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
         })
     },[])
 
