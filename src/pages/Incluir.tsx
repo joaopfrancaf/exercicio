@@ -2,13 +2,13 @@ import axios from "axios"
 import { useState } from "react"
 
 export function Incluir () {
-    const [nome,setNome] = useState ("")
-    const [sobrenome,setSobrenome] = useState ("")
+    const [name,setName] = useState ("")
+    const [type,setType] = useState ("")
 
     const sendToApi = () => {
-        axios.post('/api/clientes' , {
-        nome,
-        sobrenome
+        axios.post('http://dragonsguto.herokuapp.com/dragons/' , {
+        name,
+        type
         })
     }
 
@@ -17,13 +17,13 @@ export function Incluir () {
             <div>
                 <label>
                     Nome:
-                    <input type="text" name="name" onChange={(e) => setNome(e.target.value)} />
+                    <input type="text" name="name" onChange={(e) => setName(e.target.value)} />
                 </label>
             </div>
             <div>
                 <label>
                     Sobrenome:
-                    <input type="text" name="name" onChange={(e) => setSobrenome(e.target.value)} />
+                    <input type="text" name="name" onChange={(e) => setType(e.target.value)} />
                 </label>
             </div>
             <button type="submit" onClick={sendToApi}>Salvar</button>

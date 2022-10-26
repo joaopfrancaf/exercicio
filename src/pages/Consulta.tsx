@@ -11,7 +11,7 @@ export function Consulta () {
     const [apiData,setapiData] = useState<Cliente[]>([]);
 
     useEffect(() => {
-        axios.get('https://jsonplaceholder.typicode.com/todos/1')
+        axios.get('http://dragonsguto.herokuapp.com/dragons/find')
         .then((getData) => {
             console.log(getData.data) //bota aqui o setapiData dps (e dpos getData.data) (antes tava o consolog.() para estudar)
         })
@@ -24,7 +24,7 @@ export function Consulta () {
                     <tr>
                         <th>id</th>
                         <th>Nome</th>
-                        <th>Sobrenome</th>
+                        <th>type</th>
                     </tr>
                     {apiData.map(i => (
                         <tr key={i.id}> {/* key props para cada elemento*/}
